@@ -27,7 +27,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-
+#import "Bugsnag.h"
 #import <Cordova/CDVPlugin.h>
 
 NSString* const UIApplicationRegisterUserNotificationSettings = @"UIApplicationRegisterUserNotificationSettings";
@@ -84,6 +84,8 @@ NSString* const UIApplicationRegisterUserNotificationSettings = @"UIApplicationR
     // If necessary, uncomment the line below to override it.
     // self.viewController.startPage = @"index.html";
 
+    [Bugsnag startBugsnagWithApiKey:@"ae7bc49d1285848342342bb5c321a2cf"];
+    
     // NOTE: To customize the view's frame size (which defaults to full screen), override
     // [self.viewController viewWillAppear:] in your view controller.
 
