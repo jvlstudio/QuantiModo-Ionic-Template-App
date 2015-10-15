@@ -1,0 +1,17 @@
+dependencies:
+  pre:
+    - sudo gem install shenzhen
+test:
+  override:
+    - ./deployment/scripts/add-key.sh
+    - cd platforms/ios/
+    - ipa build -scheme Mind\ First\ Mood\ Tracker -c Distribution
+    - cd ../../
+    - ./deployment/scripts/remove-key.sh
+deployment:
+  hockey:
+    branch: app/mindfirst
+    commands:
+      - cd platforms /ios/
+      - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEYAPP_TOKEN
+      - cd ../../

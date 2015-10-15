@@ -28,6 +28,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "Bugsnag.h"
+#import <HockeySDK/HockeySDK.h>
 #import <Cordova/CDVPlugin.h>
 
 NSString* const UIApplicationRegisterUserNotificationSettings = @"UIApplicationRegisterUserNotificationSettings";
@@ -85,6 +86,12 @@ NSString* const UIApplicationRegisterUserNotificationSettings = @"UIApplicationR
     // self.viewController.startPage = @"index.html";
 
     [Bugsnag startBugsnagWithApiKey:@"ae7bc49d1285848342342bb5c321a2cf"];
+    
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"cb8c9de6afb6831bceb8e122a5f114cb"];
+    // Do some additional configuration if needed here
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
+
     
     // NOTE: To customize the view's frame size (which defaults to full screen), override
     // [self.viewController viewWillAppear:] in your view controller.

@@ -2,9 +2,13 @@ PODS:
   - Bugsnag (4.0.9):
     - Bugsnag/no-arc (= 4.0.9)
   - Bugsnag/no-arc (4.0.9)
+  - HockeySDK (3.8.2):
+    - HockeySDK/AllFeaturesLib (= 3.8.2)
+  - HockeySDK/AllFeaturesLib (3.8.2)
 
 DEPENDENCIES:
   - Bugsnag (from `https://github.com/bugsnag/bugsnag-cocoa.git`)
+  - HockeySDK (~> 3.8.2)
 
 EXTERNAL SOURCES:
   Bugsnag:
@@ -17,5 +21,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Bugsnag: a4bdbf356f318cef00d12eb1601f16d8d0c71ba4
+  HockeySDK: 9f4ac41263acf9d8a4d59491a7f17af16529b935
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

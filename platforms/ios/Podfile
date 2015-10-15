@@ -3,5 +3,6 @@
 
 target 'Mind First Mood Tracker' do
 pod 'Bugsnag', :git => "https://github.com/bugsnag/bugsnag-cocoa.git"
+pod 'HockeySDK', '~> 3.8.2'
 end
 

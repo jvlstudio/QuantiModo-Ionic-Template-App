@@ -8,25 +8,31 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>0</integer>
+		</dict>
+		<key>HockeySDK-HockeySDKResources.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Mind First Mood Tracker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6E8890E20B769759E65D031477C80D22</key>
+		<key>22D828465BB4AE7EF1EE1BE43C3C4ACF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>736701F3B7623D734CF146573E7CA864</key>
+		<key>3C014F737BF0E4D82F49D1E8DBB98C79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A90BA14585A580FAB3A3CC9DC840303</key>
 		<dict>
 			<key>primary</key>
 			<true/>
