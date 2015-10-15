@@ -13,5 +13,5 @@ deployment:
     branch: app/mindfirst
     commands:
       - cd platforms /ios/
-      - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEYAPP_TOKEN
+      - ipa distribute:hockeyapp -m "circleci build" --token $MINDFIRST_HOCKEYAPP_TOKEN
       - cd ../../
