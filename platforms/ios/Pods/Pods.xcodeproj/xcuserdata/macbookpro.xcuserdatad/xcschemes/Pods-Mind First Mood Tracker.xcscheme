@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '01A21340EF5B3BE54396B983'
+               BlueprintIdentifier = '7E7235C73BE7EE652A736682'
                BlueprintName = 'Pods-Mind First Mood Tracker'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-Mind First Mood Tracker.a'>
