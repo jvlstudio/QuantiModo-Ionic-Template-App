@@ -66,12 +66,16 @@ angular.module('starter')
                                 grant_type: 'refresh_token'
                             }, mashape_headers).success(function(data) {
                                 // update local storage
-                                var accessTokenRefreshed = authSrv.updateAccessToken(data);
+                                if (data.error) {
+                                	deferred.reject('refresh failed');
+                                } else {
+                                	var accessTokenRefreshed = authSrv.updateAccessToken(data);
 
-                                // respond
-                                deferred.resolve({
-                                    accessToken : accessTokenRefreshed
-                                });
+                                	// respond
+                                	deferred.resolve({
+                                	    accessToken : accessTokenRefreshed
+                                	});
+                                }
 
                             }).error(function(response) {
                                 console.log("refresh failed");
@@ -92,12 +96,13 @@ angular.module('starter')
 			},
 
 			// get access token from request token
-			getAccessTokenFromRequestToken : function (requestToken) {
+			getAccessTokenFromRequestToken : function (requestToken, withJWT) {
 				console.log("request token : ",requestToken);
 
 				var deferred = $q.defer();
 
-				var url = config.getURL("api/oauth2/token")
+				var url = config.getURL("api/oauth2/token");			
+				
 				console.log('expired token, refreshing!');
 
 				// make request
@@ -112,9 +117,12 @@ angular.module('starter')
 				       client_id : config.getClientId(),
 				       client_secret : config.getClientSecret(),
 				       grant_type : 'authorization_code',
-				       code : requestToken
+				       code : requestToken,
+				       redirect_uri : 'https://app.quantimo.do/ionic/Modo/www/callback'
 				   }
 				};
+
+				console.log('request is ',request);
 
 				if(config.get('use_mashape') && config.getMashapeKey()) {
 					request.headers['X-Mashape-Key'] = config.getMashapeKey();
@@ -129,8 +137,33 @@ angular.module('starter')
 				});
 
 				return deferred.promise;
-			}
+			},
 
+
+			getJWTToken : function(provider, accessToken){
+				var deferred = $q.defer();
+				
+				var url = config.getURL('api/v2/auth/social/authorizeToken');
+
+				url += "provider="+provider;
+				url += "&accessToken="+accessToken;
+
+				$http({
+				  method: 'GET',
+				  url: url,
+				  headers : {
+				  	'Content-Type' : 'application/json'
+				  }
+				}).then(function(response){
+					if(response.data.success && response.data.data && response.data.data.token) {
+						deferred.resolve(response.data.data.token);
+					} else deferred.reject(response);
+				}, function(response){
+				   deferred.reject(response);
+				});
+
+				return deferred.promise;	
+			}
 		};
 
 		return authSrv;
