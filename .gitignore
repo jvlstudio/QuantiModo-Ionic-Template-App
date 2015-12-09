@@ -1,7 +1,7 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 node_modules/
-platforms/android/
+platforms/
 plugins/
 www/lib/
 chromeApps/*/www
@@ -10,24 +10,4 @@ www/private_configs/*.config.js
 chromeApps/zips/*.zip
 .idea/
 hooks
-platforms/ios/*.DS_Store
-platforms/ios/*.Trashes
-platforms/ios/*.swp
-platforms/ios/*~.nib
-platforms/ios/DerivedData/
-platforms/ios/build/
-platforms/ios/*.pbxuser
-platforms/ios/*.mode1v3
-platforms/ios/*.mode2v3
-platforms/ios/*.perspectivev3
-!platforms/ios/default.pbxuser
-!platforms/ios/default.mode1v3
-!platforms/ios/default.mode2v3
-!platforms/ios/default.perspectivev3
-platforms/ios/*.xccheckout
-platforms/ios/xcuserdata/
-platforms/ios/*.moved-aside
-!platforms/ios/Podfile.lock
-!platforms/ios/Gemfile.lock
-platforms/ios/Mind First Mood Tracker.app.dSYM.zip
-platforms/ios/Mind First Mood Tracker.ipa
+.vagrant/

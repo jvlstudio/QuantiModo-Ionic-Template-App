@@ -3,9 +3,23 @@ A generic app that can be easily configured to help the user track and optimize 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Abolitionist-Project/QuantiModo-Ionic-Template-App/)
 
+#Quick Start
+1. Create your free app at [admin.quantimo.do](https://admin.quantimo.do) to get your client_id and client_secret. 
+1. Run `git clone https://github.com/Abolitionist-Project/QuantiModo-Ionic-Template-App`
+1. `cd QuantiModo-Ionic-Template-App`
+1. Install NodeJS with `sudo nvm install 0.12.6`
+1. Install Ionic with `sudo npm install -g cordova ionic`
+1. Install Gulp globally with `sudo npm install -g gulp`
+1. Install Gulp locally with `npm install --save-dev gulp`
+1. Install Gulp plugins `sudo npm install jshint gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev`
+1. Install Bower with `npm install -g bower`
+1. Run `bower install`
+1. Run `npm install express`
+1. Run `node app.js`
+1. See project at [http://localhost:5000/](http://localhost:5000/)
 
 #QuantiModo Ionic App
----
+
 ## File Structure
 The main contents of the App are in the `www` folder. The structure is:
 ```
@@ -145,12 +159,11 @@ This is the notification plugin (for using interactive notifications in iOS)
 ##### **`private_configs/appname.config.js`**
 As you may have copied from the sample.config.js, you would need to replace all the placeholder values (or delete the one’s you don’t use).
 
-The most important one’s to keep the app working are the `client_ids`, `client_secrets` and `mashape_keys` for `Web`.
+The most important ones to keep the app working are the `client_id` and `client_secret` for `Web`.
 You can delete the other keys and their values if you aren’t using them.
 
-> Notice that you can get the client_id and secret by contacting [m@quantimo.do](m@quantimo.do).
-
-> You can also get the Testing and Production id’s for Mashape after you create a mashape account and add yourself as a developer on [Quantimodo Mashape Portal](mashape.com/quantimodo/quantimodo).
+> Notice that you can get the client_id and client_secret by contacting [mike@quantimo.do](mike@quantimo.do) or by 
+creating an account and creating each app in the [QuantiModo Developer Portal](https://admin.quantimo.do).
 
 ##### **`configş/appname.js`**
 This is the most important file for your app, where all the changes will be made to configure your app.
@@ -168,7 +181,6 @@ window.config = {
     },
     client_source_name : "MoodiModo "+getPlatform(),
     domain : 'app.quantimo.do',
-    mashape_domain : 'https://quantimodo-quantimodo-v1.p.mashape.com/api/',
     environment: "Development",
     permissions : [
       'readmeasurements', 
@@ -177,18 +189,15 @@ window.config = {
     port : '4417',
     protocol : 'https',
     shopping_cart_enabled : true,
-    use_mashape : false
 };
 ```
 ### Explanation
 
 `client_source_name` : Replace MoodiModo with your app name (The one you requested from hello@quantimodo.com while generating your app).
 
-`domain` : This is the domain used for making api requests only when `use_mashape` is set to false`.
+`domain` : This is the domain used for making api requests
 
-`mashape_domain` : This is the domain used for making api requests only if `use_mashape` is set to `true`.
-
-`environment` : Can be set to `Development`, `Staging`, or `Production`, This will determine what keys to use when making api requests on mashape.
+`environment` : Can be set to `Development`, `Staging`, or `Production`, This will determine what keys to use when making api requests.
 
 `permissions` : This is an array of permissions logging into the QuantiModo Api. 
 
@@ -196,9 +205,7 @@ window.config = {
 
 `protocol` : (http or https) The protocol to use when requesting the api.
 
-`shipping_cart_enabled` : true or false if you wish to keep the shopping cart buttons in postive/negative predictor lists.
-
-`use_mashape` : if you wish to route the app's request through mashape set this to `true` otherwise set it to `false`.
+`shopping_cart_enabled` : true or false if you wish to keep the shopping cart buttons in postive/negative predictor lists.
 
 **`config.appSettings` Object **
 
