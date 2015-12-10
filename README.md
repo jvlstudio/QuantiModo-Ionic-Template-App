@@ -633,7 +633,7 @@ To run the chrome app locally, simply follow these steps:
 
 7. Install Google Plus Plugin by running 
 
-  `cordova plugin add cordova-plugin-googleplus --variable REVERSED_CLIENT_ID=com.googleusercontent.apps.1052648855194-djmit92q5bbglkontak0vdc7lafupt0d` 
+  `cordova plugin add cordova-plugin-googleplus --variable REVERSED_CLIENT_ID=com.googleusercontent.apps.1052648855194-6v0vca8chlqpo1bfqsj8ir6vp6o5avmd` 
 
  > Replace the client id according to the app you are building from Google’s Developer’s Console
  

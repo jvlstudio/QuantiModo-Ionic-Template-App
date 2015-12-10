@@ -4,7 +4,7 @@ var appsManager = {
 		"energymodo" : "configs/energymodo",
 		"mindfirst" : "configs/mindfirst"
 	},
-	defaultApp : "moodimodo",
+	defaultApp : "mindfirst",
 	getDefaultConfig : function(){
 		return appsManager.apps[appsManager.defaultApp] ? appsManager.apps[appsManager.defaultApp]+'.js' : false;
 	},
